@@ -1,0 +1,25 @@
+{
+  "name": "ir4gev--run",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@ant-design/icons": "5.2.5",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
+    "antd": "5.8.3",
+    "babel-plugin-styled-components": ">= 2",
+    "react": "18.2.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "18.2.0",
+    "styled-components": "^6.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-scripts": "latest"
+  }
+}
