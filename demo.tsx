@@ -7,34 +7,9 @@ import { Scrollbars } from 'react-custom-scrollbars';
 const CheckboxGroup = Checkbox.Group;
 
 const GroupItem = (props) => {
-  const {
-    children,
-    id,
-    onClick,
-    activeId,
-    checked,
-    describe,
-    getTpTemplateList,
-    setVisibleCompile,
-    setDeleteModal,
-    setCheckedList,
-    editForm,
-    searchName,
-  } = props;
+  const { children, id, onClick, activeId } = props;
   const isActive = id === activeId;
 
-  // const handleEditClick = (e: React.MouseEvent) => {
-  //   e.stopPropagation();
-  //   setVisibleCompile({ visible: true, editId: id, name: children });
-  //   editForm.setFieldsValue({
-  //     name: children,
-  //     describe: describe,
-  //   });
-  // };
-  // const handleDeleteClick = () => {
-  //   setDeleteModal(true);
-  //   setCheckedList([id]);
-  // };
   return (
     <GroupItemContainer isActive={isActive} onClick={onClick}>
       <Typography.Text
@@ -86,11 +61,12 @@ const App: React.FC = () => {
             style={{ width: '100%' }}
           >
             {list?.map((group) => (
-              <div className="group-container" key={group?.id}>
+              <div style={{ display: 'flex' }} key={group?.id}>
                 <Checkbox value={group.id} className="group-check" />
                 <MemoizedGroupItem
                   activeId={selectGroup}
                   id={group.id}
+                  /**加了点击事件会更卡一点，感觉引用类型props会影响diff性能 */
                   onClick={() => {
                     setSelectGroup(group.id);
                   }}
